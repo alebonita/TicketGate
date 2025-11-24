@@ -6,7 +6,7 @@ Given('el Usuario Comprador ha iniciado sesión en TicketGate', function () {
   return 'pending';
 });
 
-Given('se encuentra en la página de detalle del evento string', function (nombreEvento) {
+Given(/^se encuentra en la página de detalle del evento "([^"]*)"$/, function (nombreEvento) {
   return 'pending';
 });
 
@@ -114,6 +114,7 @@ Given('el usuario ha dejado el campo {string} del Beneficiario #{int} vacío', f
   return 'pending';
 });
 
+// ESTE ES EL PASO COMPARTIDO. LO DEJAMOS SOLO AQUÍ PARA QUE NO HAYA AMBIGÜEDAD.
 When('hace clic en el botón {string}', function (btn) {
   return 'pending';
 });
