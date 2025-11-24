@@ -10,9 +10,8 @@ Given('existe un evento llamado {string}', function (nombreEvento) {
   return 'pending';
 });
 
-// --- AC-01: Transición de UI ---
+// --- Scenarios ---
 
-// Scenario: The One Where It Sells Out Instantly
 Given('el inventario general del evento es {int} en la base de datos', function (cantidad) {
   return 'pending';
 });
@@ -21,41 +20,38 @@ When('el usuario carga la página del evento', function () {
   return 'pending';
 });
 
-Then('el botón principal {string} no debe renderizarse', function (nombreBoton) {
+Then('el botón principal {string} no debe renderizarse', function (btn) {
   return 'pending';
 });
 
-Then('debe aparecer el componente {string} habilitado', function (nombreComponente) {
+Then('debe aparecer el componente {string} habilitado', function (comp) {
   return 'pending';
 });
 
-// Scenario: The One With The Available Seats
 Given('el inventario general del evento es mayor a {int}', function (cantidad) {
   return 'pending';
 });
 
-Then('el botón {string} debe permanecer visible y funcional', function (nombreBoton) {
+Then('el botón {string} debe permanecer visible y funcional', function (btn) {
   return 'pending';
 });
 
-Then('el botón de {string} debe estar oculto', function (nombreBoton) {
+Then('el botón de {string} debe estar oculto', function (btn) {
   return 'pending';
 });
 
-// Scenario: The One With The Live Update
 Given('el usuario está viendo la página y el inventario es {int}', function (cantidad) {
   return 'pending';
 });
 
-When('el WebSocket emite el evento {string}', function (eventoSocket) {
+When('el WebSocket emite el evento {string}', function (evt) {
   return 'pending';
 });
 
-Then('el botón cambia automáticamente de {string} a {string} sin recargar la página', function (btnAnterior, btnNuevo) {
+Then('el botón cambia automáticamente de {string} a {string} sin recargar la página', function (b1, b2) {
   return 'pending';
 });
 
-// Scenario: The One With The Glitch
 Given('el sistema de inventario devuelve un valor negativo por error', function () {
   return 'pending';
 });
@@ -64,34 +60,29 @@ Then('la interfaz interpreta el estado como agotado', function () {
   return 'pending';
 });
 
-Then('muestra el botón de {string} por seguridad', function (nombreBoton) {
+Then('muestra el botón de {string} por seguridad', function (btn) {
   return 'pending';
 });
 
-// --- AC-02 & AC-03: Inscripción y Duplicados ---
-
-// Scenario: The One Where Joey Joins The Line
 Given('el usuario no se encuentra registrado en la tabla {string} para este evento', function (tabla) {
   return 'pending';
 });
 
-When('hace clic en el botón {string}', function (nombreBoton) {
+// NOTA: Se eliminó "hace clic en el botón {string}" de aquí para evitar
+// la ambigüedad. Cucumber usará la definición que está en stepdefsCompraGrupal.js
+
+Then('el sistema guarda un nuevo registro con estatus {string} y la fecha actual', function (status) {
   return 'pending';
 });
 
-Then('el sistema guarda un nuevo registro con estatus {string} y la fecha actual', function (estatus) {
+Then('la UI muestra un mensaje de éxito: {string}', function (msg) {
   return 'pending';
 });
 
-Then('la UI muestra un mensaje de éxito: {string}', function (mensaje) {
+Then('el botón cambia de estado a {string}', function (estado) {
   return 'pending';
 });
 
-Then('el botón cambia de estado a {string}', function (estadoBoton) {
-  return 'pending';
-});
-
-// Scenario: The One With The Timestamp
 Given('varios usuarios se inscriben simultáneamente', function () {
   return 'pending';
 });
@@ -104,12 +95,11 @@ Then('debe registrar los milisegundos exactos de cada uno para garantizar el ord
   return 'pending';
 });
 
-// Scenario: The One Where Monica Panics
-Given('el usuario ya tiene un registro activo con estatus {string}', function (estatus) {
+Given('el usuario ya tiene un registro activo con estatus {string}', function (status) {
   return 'pending';
 });
 
-When('intenta hacer clic en {string} nuevamente desde el mismo navegador', function (textoClic) {
+When('intenta hacer clic en {string} nuevamente desde el mismo navegador', function (btn) {
   return 'pending';
 });
 
@@ -117,7 +107,7 @@ Then('el Backend retorna un conflicto', function () {
   return 'pending';
 });
 
-Then('la UI muestra la alerta: {string}', function (mensaje) {
+Then('la UI muestra la alerta: {string}', function (msg) {
   return 'pending';
 });
 
@@ -125,7 +115,6 @@ Then('NO se crea un nuevo registro en la base de datos', function () {
   return 'pending';
 });
 
-// Scenario: The One With The Double Device
 Given('el usuario se inscribió previamente desde su celular', function () {
   return 'pending';
 });
@@ -134,16 +123,15 @@ When('inicia sesión en su computadora e intenta unirse al mismo evento', functi
   return 'pending';
 });
 
-Then('el sistema detecta el registro previo por {string}', function (campoId) {
+Then('el sistema detecta el registro previo por {string}', function (campo) {
   return 'pending';
 });
 
-Then('bloquea la nueva inscripción mostrando {string}', function (mensaje) {
+Then('bloquea la nueva inscripción mostrando {string}', function (msg) {
   return 'pending';
 });
 
-// Scenario: The One Where The User Forgot
-Given('el usuario ya recibió notificación y tiene estatus {string}', function (estatus) {
+Given('el usuario ya recibió notificación y tiene estatus {string}', function (status) {
   return 'pending';
 });
 
@@ -159,14 +147,12 @@ Then('no altera su turno ni crea un registro nuevo', function () {
   return 'pending';
 });
 
-// --- AC-04: Asignación FIFO ---
-
-// Scenario: The One Where Ross Was First
-Given('la lista de espera tiene el orden: {string} primero, {string} después', function (usuario1, usuario2) {
+// CORRECCIÓN: Usamos Regex aquí para ser exactos y evitar errores de "Undefined"
+Given(/^la lista de espera tiene el orden: Ross primero, Rachel después$/, function () {
   return 'pending';
 });
 
-Given('se libera {int} boleto por cancelación', function (cantidad) {
+Given('se libera {int} boleto por cancelación', function (cant) {
   return 'pending';
 });
 
@@ -174,16 +160,15 @@ When('el Worker de asignación se ejecuta', function () {
   return 'pending';
 });
 
-Then('selecciona estrictamente a {string} por ser el registro más antiguo', function (usuario) {
+Then('selecciona estrictamente a {string} por ser el registro más antiguo', function (user) {
   return 'pending';
 });
 
-Then('cambia su estatus a {string}', function (estatus) {
+Then('cambia su estatus a {string}', function (status) {
   return 'pending';
 });
 
-// Scenario: The One With The Hidden Ticket
-Given('el sistema ha asignado un boleto liberado al usuario {string}', function (usuario) {
+Given('el sistema ha asignado un boleto liberado al usuario {string}', function (user) {
   return 'pending';
 });
 
@@ -191,29 +176,27 @@ When('cualquier otro usuario consulta el inventario público del evento', functi
   return 'pending';
 });
 
-Then('el inventario sigue marcando {int} boletos disponibles', function (cantidad) {
+Then('el inventario sigue marcando {int} boletos disponibles', function (cant) {
   return 'pending';
 });
 
-Then('el boleto permanece bloqueado exclusivamente para {string}', function (usuario) {
+Then('el boleto permanece bloqueado exclusivamente para {string}', function (user) {
   return 'pending';
 });
 
-// Scenario: The One Where Rachel Waits
-Given('la lista tiene {int} personas y se libera {int} boleto', function (totalPersonas, boletosLiberados) {
+Given('la lista tiene {int} personas y se libera {int} boleto', function (p, b) {
   return 'pending';
 });
 
-When('el Worker asigna el boleto al usuario #{int}', function (numeroUsuario) {
+When('el Worker asigna el boleto al usuario #{int}', function (num) {
   return 'pending';
 });
 
-Then('los usuarios del #{int} al #{int} permanecen en estatus {string} sin cambios', function (inicio, fin, estatus) {
+Then('los usuarios del #{int} al #{int} permanecen en estatus {string} sin cambios', function (n1, n2, status) {
   return 'pending';
 });
 
-// Scenario: The One With The Empty Queue
-Given('se libera {int} boleto pero la lista de espera está vacía', function (cantidad) {
+Given('se libera {int} boleto pero la lista de espera está vacía', function (cant) {
   return 'pending';
 });
 
@@ -221,7 +204,7 @@ When('el Worker de asignación verifica la tabla {string}', function (tabla) {
   return 'pending';
 });
 
-Then('el sistema cambia el estatus del evento a {string}', function (estatus) {
+Then('el sistema cambia el estatus del evento a {string}', function (status) {
   return 'pending';
 });
 
@@ -229,8 +212,7 @@ Then('permite la venta general al público inmediatamente', function () {
   return 'pending';
 });
 
-// Scenario: The One Where The User Is Banned
-Given('el usuario #{int} en la lista tiene su cuenta suspendida o inactiva', function (numeroUsuario) {
+Given('el usuario #{int} en la lista tiene su cuenta suspendida o inactiva', function (num) {
   return 'pending';
 });
 
@@ -238,17 +220,14 @@ When('el Worker intenta asignar el boleto', function () {
   return 'pending';
 });
 
-Then('el sistema salta automáticamente al usuario #{int}', function (numeroUsuario) {
+Then('el sistema salta automáticamente al usuario #{int}', function (num) {
   return 'pending';
 });
 
-Then('asigna el boleto al usuario #{int} en la fila', function (numeroUsuario) {
+Then('asigna el boleto al usuario #{int} en la fila', function (num) {
   return 'pending';
 });
 
-// --- AC-05: Token Seguro ---
-
-// Scenario: The One With The Golden Link
 Given('el usuario ha sido seleccionado por el Worker', function () {
   return 'pending';
 });
@@ -261,7 +240,7 @@ Then('crea una URL única que incluye un token firmado', function () {
   return 'pending';
 });
 
-Then('el token tiene una configuración de expiración de {int} minutos', function (minutos) {
+Then('el token tiene una configuración de expiración de {int} minutos', function (min) {
   return 'pending';
 });
 
@@ -269,12 +248,11 @@ Then('envía el correo electrónico al usuario', function () {
   return 'pending';
 });
 
-// Scenario: The One With The Stolen Identity
-Given('el usuario {string} recibió el enlace pero se lo envió a {string}', function (usuario1, usuario2) {
+Given('el usuario {string} recibió el enlace pero se lo envió a {string}', function (u1, u2) {
   return 'pending';
 });
 
-When('{string} intenta abrir el enlace con su propia sesión iniciada', function (usuario) {
+When('{string} intenta abrir el enlace con su propia sesión iniciada', function (user) {
   return 'pending';
 });
 
@@ -282,18 +260,15 @@ Then('el sistema rechaza el acceso al checkout', function () {
   return 'pending';
 });
 
-Then('muestra un error de {string}', function (mensajeError) {
+Then('muestra un error de {string}', function (err) {
   return 'pending';
 });
 
-// --- AC-06: Expiración ---
-
-// Scenario: The One Where Chandler Oversleeps
-Given('el usuario {string} tiene estatus {string}', function (usuario, estatus) {
+Given('el usuario {string} tiene estatus {string}', function (user, status) {
   return 'pending';
 });
 
-Given('han pasado {int} minutos desde que se le envió el correo', function (minutos) {
+Given('han pasado {int} minutos desde que se le envió el correo', function (min) {
   return 'pending';
 });
 
@@ -301,7 +276,7 @@ When('el Cron Job de limpieza se ejecuta', function () {
   return 'pending';
 });
 
-Then('cambia el estatus de {string} a {string}', function (usuario, estatus) {
+Then('cambia el estatus de {string} a {string}', function (user, status) {
   return 'pending';
 });
 
@@ -309,8 +284,7 @@ Then('retira el bloqueo del boleto reservado', function () {
   return 'pending';
 });
 
-// Scenario: The One With The Second Chance
-Given('el sistema acaba de marcar a un usuario como {string}', function (estatus) {
+Given('el sistema acaba de marcar a un usuario como {string}', function (status) {
   return 'pending';
 });
 
@@ -322,13 +296,15 @@ Then('dispara inmediatamente el proceso de asignación', function () {
   return 'pending';
 });
 
-// CORRECCIÓN IMPORTANTE: Escapamos los paréntesis de ("Joey") con doble barra \\
-Then('el boleto se ofrece al siguiente usuario en la fila \\({string}\\)', function (usuario) {
+Then(/^el boleto se ofrece al siguiente usuario en la fila \("([^"]*)"\)$/, function (user) {
   return 'pending';
 });
 
-// Scenario: The One Where It Is Too Late
-Given('el usuario intenta acceder al enlace de compra en el minuto {int}', function (minuto) {
+Given('el usuario intenta acceder al enlace de compra en el minuto {int}', function (min) {
+  return 'pending';
+});
+
+When('carga la página', function () {
   return 'pending';
 });
 
@@ -340,12 +316,11 @@ Then('muestra una página de error indicando que el turno ha caducado', function
   return 'pending';
 });
 
-// Scenario: The One Where He Tries Again
-Given('el usuario tiene estatus {string} en este evento', function (estatus) {
+Given('el usuario tiene estatus {string} en este evento', function (status) {
   return 'pending';
 });
 
-When('hace clic nuevamente en {string}', function (textoBoton) {
+When('hace clic nuevamente en {string}', function (btn) {
   return 'pending';
 });
 

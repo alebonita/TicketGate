@@ -6,11 +6,12 @@ Given('el usuario ha ingresado a la plataforma TicketGate', function () {
   return 'pending';
 });
 
-Given('las herramientas de accesibilidad (lector de pantalla o teclado) están activas', function () {
+// USO REGEX PARA EVITAR PROBLEMAS CON PARENTESIS Y BARRAS
+Given(/^las herramientas de accesibilidad \(lector de pantalla\/teclado\) están activas$/, function () {
   return 'pending';
 });
 
-// --- Regla: Lectura de Imágenes (Alt Text) ---
+// --- Regla: Lectura de Imágenes ---
 
 Given('el usuario navega con el lector de pantalla sobre el póster principal', function () {
   return 'pending';
@@ -36,7 +37,7 @@ When('el sistema procesa el elemento decorativo', function () {
   return 'pending';
 });
 
-Then('lo ignora completamente (silencio) porque el atributo alt está vacío', function () {
+Then(/^lo ignora completamente \(silencio\) porque el atributo alt está vacío$/, function () {
   return 'pending';
 });
 
@@ -48,7 +49,7 @@ When('el foco llega a una miniatura', function () {
   return 'pending';
 });
 
-Then('el sistema lee una descripción breve como {string} o {string}', function (desc1, desc2) {
+Then('el sistema lee una descripción breve como {string} o {string}', function (d1, d2) {
   return 'pending';
 });
 
@@ -68,7 +69,11 @@ Then('permite que todos sepan de qué se trataba la imagen', function () {
   return 'pending';
 });
 
-Given('el usuario se encuentra con un ícono SVG complejo (ej. gráfico de asientos)', function () {
+Then(/^el botón muestra un borde grueso y de alto contraste \(outline\)$/, function () {
+  return 'pending';
+});
+
+Given(/^el usuario se encuentra con un ícono SVG complejo \(ej\. gráfico de asientos\)$/, function () {
   return 'pending';
 });
 
@@ -76,21 +81,17 @@ When('el lector de pantalla interpreta el gráfico', function () {
   return 'pending';
 });
 
-Then('lee una descripción simplificada {string}', function (descripcion) {
+Then('lee una descripción simplificada {string}', function (desc) {
   return 'pending';
 });
 
-// --- Regla: Indicador Visual de Foco (Focus Ring) ---
+// --- Regla: Indicador Visual de Foco ---
 
-Given('el usuario presiona la tecla Tab para llegar al botón {string}', function (boton) {
+Given('el usuario presiona la tecla Tab para llegar al botón {string}', function (btn) {
   return 'pending';
 });
 
 When('el elemento recibe el foco', function () {
-  return 'pending';
-});
-
-Then('el botón muestra un borde grueso y de alto contraste (outline)', function () {
   return 'pending';
 });
 
@@ -114,7 +115,7 @@ Then('no salta campos aleatoriamente', function () {
   return 'pending';
 });
 
-Given('el usuario abre una ventana modal de {string}', function (tituloModal) {
+Given('el usuario abre una ventana modal de {string}', function (modal) {
   return 'pending';
 });
 
@@ -126,7 +127,7 @@ Then('el foco cicla infinitamente dentro del ventana modal', function () {
   return 'pending';
 });
 
-Then('no se escapa a los elementos del fondo (Focus Trap)', function () {
+Then(/^no se escapa a los elementos del fondo \(Focus Trap\)$/, function () {
   return 'pending';
 });
 
@@ -146,11 +147,11 @@ Then('el usuario no pierde la posición en la página', function () {
   return 'pending';
 });
 
-Given('el usuario llega a una lista desplegable de {string}', function (nombreLista) {
+Given('el usuario llega a una lista desplegable de {string}', function (lista) {
   return 'pending';
 });
 
-When('utiliza las flechas del teclado (Arriba o Abajo)', function () {
+When(/^utiliza las flechas del teclado \(Arriba\/Abajo\)$/, function () {
   return 'pending';
 });
 
@@ -158,7 +159,7 @@ Then('puede navegar dentro de las opciones tal como lo haría en una aplicación
   return 'pending';
 });
 
-// --- Regla: Enlace de Salto (Skip Link) ---
+// --- Regla: Enlace de Salto ---
 
 Given('el usuario carga la página', function () {
   return 'pending';
@@ -168,7 +169,7 @@ When('presiona Tab por primera vez', function () {
   return 'pending';
 });
 
-Then('aparece visualmente un botón que estaba oculto con el texto {string}', function (textoBoton) {
+Then('aparece visualmente un botón que estaba oculto con el texto {string}', function (texto) {
   return 'pending';
 });
 
@@ -184,7 +185,7 @@ Then('el foco se mueve inmediatamente al título H1 del evento', function () {
   return 'pending';
 });
 
-Then('salta los {int} enlaces del menú de navegación repetitivo', function (cantidad) {
+Then('salta los {int} enlaces del menú de navegación repetitivo', function (cant) {
   return 'pending';
 });
 
@@ -196,7 +197,7 @@ Then('el foco continúa normalmente hacia el logo y el menú de navegación', fu
   return 'pending';
 });
 
-// --- Regla: Etiquetas ARIA en Íconos ---
+// --- Regla: Etiquetas ARIA ---
 
 Given('existe un botón con ícono de lupa sin texto visible', function () {
   return 'pending';
@@ -206,11 +207,11 @@ When('el lector de pantalla selecciona el botón', function () {
   return 'pending';
 });
 
-Then('el sistema anuncia {string} gracias a la etiqueta ARIA', function (anuncio) {
+Then('el sistema anuncia {string} gracias a la etiqueta ARIA', function (texto) {
   return 'pending';
 });
 
-Given('el usuario interactúa con el botón {string} en una ventana emergente', function (nombreBoton) {
+Given('el usuario interactúa con el botón {string} en una ventana emergente', function (btn) {
   return 'pending';
 });
 
@@ -218,7 +219,7 @@ When('el lector de pantalla lee el elemento', function () {
   return 'pending';
 });
 
-Then('anuncia claramente {string} en lugar de decir {string} o {string}', function (anuncio, malo1, malo2) {
+Then('anuncia claramente {string} en lugar de decir {string} o {string}', function (t1, t2, t3) {
   return 'pending';
 });
 
@@ -230,11 +231,11 @@ When('el foco llega a los íconos', function () {
   return 'pending';
 });
 
-Then('el lector anuncia {string}, {string}, etc.', function (red1, red2) {
+Then('el lector anuncia {string}, {string}, etc.', function (r1, r2) {
   return 'pending';
 });
 
-Given('el sistema presenta un indicador de carga (Spinner) animado', function () {
+Given(/^el sistema presenta un indicador de carga \(Spinner\) animado$/, function () {
   return 'pending';
 });
 
@@ -242,11 +243,11 @@ When('el lector de pantalla detecta el elemento', function () {
   return 'pending';
 });
 
-Then('anuncia {string} en lugar de ignorar la animación', function (mensaje) {
+Then('anuncia {string} en lugar de ignorar la animación', function (texto) {
   return 'pending';
 });
 
-// --- Regla: Notificaciones de Estado (Toast) ---
+// --- Regla: Notificaciones Toast ---
 
 Given('el usuario agrega un boleto al carrito correctamente', function () {
   return 'pending';
@@ -256,7 +257,7 @@ When('aparece una notificación visual en pantalla', function () {
   return 'pending';
 });
 
-Then('el lector de pantalla la lee automáticamente: {string}', function (mensaje) {
+Then('el lector de pantalla la lee automáticamente: {string}', function (texto) {
   return 'pending';
 });
 
@@ -268,11 +269,11 @@ When('aparece un mensaje de error visual', function () {
   return 'pending';
 });
 
-Then('el lector lo anuncia inmediatamente: {string}', function (mensaje) {
+Then('el lector lo anuncia inmediatamente: {string}', function (texto) {
   return 'pending';
 });
 
-Given('el temporizador de compra de {int} minutos llega a su fin', function (minutos) {
+Given('el temporizador de compra de {int} minutos llega a su fin', function (min) {
   return 'pending';
 });
 
@@ -280,7 +281,7 @@ When('el sistema detecta el timeout', function () {
   return 'pending';
 });
 
-Then('el lector de pantalla interrumpe al usuario para anunciar: {string}', function (mensaje) {
+Then('el lector de pantalla interrumpe al usuario para anunciar: {string}', function (texto) {
   return 'pending';
 });
 
@@ -292,6 +293,6 @@ When('el sistema muestra el mensaje en pantalla', function () {
   return 'pending';
 });
 
-Then('el lector anuncia: {string}', function (mensaje) {
+Then('el lector anuncia: {string}', function (texto) {
   return 'pending';
 });
